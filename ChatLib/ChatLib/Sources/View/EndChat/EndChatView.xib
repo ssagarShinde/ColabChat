@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="EndChatView" customModule="ChatLib" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="245"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRj-nd-43M" customClass="CurveView" customModule="ChatLib" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="10" width="414" height="235"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End this chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3d-QH-YBL">
+                            <rect key="frame" x="148.5" y="75" width="117.5" height="23.5"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure, you want to end chat with agent ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCW-5z-fSE">
+                            <rect key="frame" x="60" y="113.5" width="294" height="35"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                            <color key="textColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekc-yF-E4g">
+                            <rect key="frame" x="206.5" y="167.5" width="1" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Hl2-We-qJh"/>
+                                <constraint firstAttribute="width" constant="1" id="Zg4-Ch-WZO"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxu-e1-Nwl" customClass="CurveBtn" customModule="ChatLib" customModuleProvider="target">
+                            <rect key="frame" x="227.5" y="167.5" width="150" height="40"/>
+                            <color key="backgroundColor" red="0.47450980392156861" green="0.082352941176470587" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="Mm2-NO-EIq"/>
+                                <constraint firstAttribute="height" constant="40" id="oxV-yV-cqQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                            <state key="normal" title="End Chat">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="EndChatBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="42p-r3-Aje"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colabEndchat" translatesAutoresizingMaskIntoConstraints="NO" id="cZV-2b-c3w">
+                            <rect key="frame" x="187" y="15" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Wlh-Z5-Vf8"/>
+                                <constraint firstAttribute="width" constant="40" id="ca4-DS-GrD"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iiE-qq-f4j" customClass="CurveBtn" customModule="ChatLib" customModuleProvider="target">
+                            <rect key="frame" x="36.5" y="167.5" width="150" height="40"/>
+                            <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="U3r-Bm-dmt"/>
+                                <constraint firstAttribute="width" constant="150" id="lo2-dJ-iay"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="CancelBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="LNG-O7-fYA"/>
+                            </connections>
+                        </button>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17o-97-88o">
+                            <rect key="frame" x="5" y="5" width="404" height="225"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colabAgentEndChat" translatesAutoresizingMaskIntoConstraints="NO" id="4zT-mI-SYG">
+                                    <rect key="frame" x="182" y="10" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="bP7-8I-Q8P"/>
+                                        <constraint firstAttribute="width" constant="40" id="uAe-wx-8MQ"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agent has ended this chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nV-b1-J66">
+                                    <rect key="frame" x="85" y="70" width="234" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6T-BS-gRA" customClass="CurveBtn" customModule="ChatLib" customModuleProvider="target">
+                                    <rect key="frame" x="127" y="162.5" width="150" height="40"/>
+                                    <color key="backgroundColor" red="0.47450980392156861" green="0.082352941176470587" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="150" id="DgD-GV-XoU"/>
+                                        <constraint firstAttribute="height" constant="40" id="cWb-uh-yMb"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                    <state key="normal" title="Close window">
+                                        <color key="titleColor" red="0.94509803920000002" green="0.96862745100000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="closeWindowBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="LM2-RE-TCL"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your session has been closed. Glad to have helped you!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY3-cz-wOZ">
+                                    <rect key="frame" x="30" y="109.5" width="344" height="35"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                    <color key="textColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="4zT-mI-SYG" firstAttribute="centerX" secondItem="17o-97-88o" secondAttribute="centerX" id="3Oa-p0-p2q"/>
+                                <constraint firstItem="4zT-mI-SYG" firstAttribute="top" secondItem="17o-97-88o" secondAttribute="top" constant="10" id="Thc-aX-6Da"/>
+                                <constraint firstAttribute="trailing" secondItem="XY3-cz-wOZ" secondAttribute="trailing" constant="30" id="WlW-Rg-yiD"/>
+                                <constraint firstItem="m6T-BS-gRA" firstAttribute="centerX" secondItem="17o-97-88o" secondAttribute="centerX" id="Xb6-J7-CoA"/>
+                                <constraint firstItem="XY3-cz-wOZ" firstAttribute="top" secondItem="3nV-b1-J66" secondAttribute="bottom" constant="16" id="fhB-4W-zEq"/>
+                                <constraint firstItem="XY3-cz-wOZ" firstAttribute="leading" secondItem="17o-97-88o" secondAttribute="leading" constant="30" id="jvN-1E-DFB"/>
+                                <constraint firstItem="3nV-b1-J66" firstAttribute="top" secondItem="4zT-mI-SYG" secondAttribute="bottom" constant="20" id="lOG-vM-LMJ"/>
+                                <constraint firstItem="3nV-b1-J66" firstAttribute="centerX" secondItem="4zT-mI-SYG" secondAttribute="centerX" id="nxV-GM-TNG"/>
+                                <constraint firstItem="m6T-BS-gRA" firstAttribute="centerY" secondItem="17o-97-88o" secondAttribute="centerY" constant="70" id="odL-S4-8Vs"/>
+                                <constraint firstItem="m6T-BS-gRA" firstAttribute="centerX" secondItem="17o-97-88o" secondAttribute="centerX" id="poL-wC-7j4"/>
+                            </constraints>
+                        </view>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="RGS-Vr-Vr9">
+                            <rect key="frame" x="187" y="155" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="W1y-yT-vq5"/>
+                                <constraint firstAttribute="height" constant="40" id="hCT-GK-p5W"/>
+                            </constraints>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="RGS-Vr-Vr9" firstAttribute="centerX" secondItem="rRj-nd-43M" secondAttribute="centerX" id="07E-Zd-HdQ"/>
+                        <constraint firstAttribute="bottom" secondItem="RGS-Vr-Vr9" secondAttribute="bottom" constant="40" id="0U0-gd-dEj"/>
+                        <constraint firstItem="17o-97-88o" firstAttribute="leading" secondItem="rRj-nd-43M" secondAttribute="leading" constant="5" id="1ZJ-Bf-N0E"/>
+                        <constraint firstItem="mCW-5z-fSE" firstAttribute="centerX" secondItem="Y3d-QH-YBL" secondAttribute="centerX" id="4MF-6e-4ul"/>
+                        <constraint firstItem="iiE-qq-f4j" firstAttribute="centerY" secondItem="ekc-yF-E4g" secondAttribute="centerY" id="5cK-W9-3Fr"/>
+                        <constraint firstItem="ekc-yF-E4g" firstAttribute="centerX" secondItem="rRj-nd-43M" secondAttribute="centerX" id="A08-3k-hgS"/>
+                        <constraint firstItem="ekc-yF-E4g" firstAttribute="centerY" secondItem="rRj-nd-43M" secondAttribute="centerY" constant="70" id="ATV-Tw-R83"/>
+                        <constraint firstItem="cZV-2b-c3w" firstAttribute="top" secondItem="rRj-nd-43M" secondAttribute="top" constant="15" id="OD5-7o-qSC"/>
+                        <constraint firstItem="Yxu-e1-Nwl" firstAttribute="centerY" secondItem="ekc-yF-E4g" secondAttribute="centerY" id="Qbl-8p-8nh"/>
+                        <constraint firstItem="Y3d-QH-YBL" firstAttribute="top" secondItem="cZV-2b-c3w" secondAttribute="bottom" constant="20" id="Xz6-8s-9l9"/>
+                        <constraint firstItem="Yxu-e1-Nwl" firstAttribute="leading" secondItem="ekc-yF-E4g" secondAttribute="trailing" constant="20" id="YXA-mx-LPl"/>
+                        <constraint firstAttribute="trailing" secondItem="17o-97-88o" secondAttribute="trailing" constant="5" id="byV-4L-V2u"/>
+                        <constraint firstItem="ekc-yF-E4g" firstAttribute="leading" secondItem="iiE-qq-f4j" secondAttribute="trailing" constant="20" id="cIo-Wi-Spp"/>
+                        <constraint firstItem="mCW-5z-fSE" firstAttribute="leading" secondItem="rRj-nd-43M" secondAttribute="leading" constant="60" id="dgj-xm-Wjm"/>
+                        <constraint firstAttribute="bottom" secondItem="17o-97-88o" secondAttribute="bottom" constant="5" id="eNY-1i-Apo"/>
+                        <constraint firstItem="17o-97-88o" firstAttribute="top" secondItem="rRj-nd-43M" secondAttribute="top" constant="5" id="hIM-3A-j9T"/>
+                        <constraint firstItem="cZV-2b-c3w" firstAttribute="centerX" secondItem="rRj-nd-43M" secondAttribute="centerX" id="l1D-IG-0Od"/>
+                        <constraint firstItem="Y3d-QH-YBL" firstAttribute="centerX" secondItem="cZV-2b-c3w" secondAttribute="centerX" id="snl-JO-e8n"/>
+                        <constraint firstItem="mCW-5z-fSE" firstAttribute="top" secondItem="Y3d-QH-YBL" secondAttribute="bottom" constant="15" id="xOW-SI-8rX"/>
+                        <constraint firstAttribute="trailing" secondItem="mCW-5z-fSE" secondAttribute="trailing" constant="60" id="y2w-OW-xOg"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeft" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRight" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rRj-nd-43M" secondAttribute="trailing" id="3LI-1B-p4v"/>
+                <constraint firstItem="rRj-nd-43M" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="4Mu-j9-7I5"/>
+                <constraint firstItem="rRj-nd-43M" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="BXb-N2-ekC"/>
+                <constraint firstAttribute="bottom" secondItem="rRj-nd-43M" secondAttribute="bottom" id="WaC-Oq-eGd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="agentEndChatView" destination="17o-97-88o" id="ycO-sM-dGO"/>
+                <outlet property="btnCancel" destination="iiE-qq-f4j" id="miS-qX-h0J"/>
+                <outlet property="btnEndChat" destination="Yxu-e1-Nwl" id="fHh-1d-zHE"/>
+                <outlet property="loader" destination="RGS-Vr-Vr9" id="xxc-JL-4se"/>
+            </connections>
+            <point key="canvasLocation" x="-449" y="282"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="Yxu-e1-Nwl">
+            <size key="intrinsicContentSize" width="67" height="31"/>
+        </designable>
+        <designable name="iiE-qq-f4j">
+            <size key="intrinsicContentSize" width="50" height="31"/>
+        </designable>
+        <designable name="m6T-BS-gRA">
+            <size key="intrinsicContentSize" width="101" height="31"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="colabAgentEndChat" width="32" height="32"/>
+        <image name="colabEndchat" width="32" height="32"/>
+    </resources>
+</document>

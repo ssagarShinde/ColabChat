@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="ZoomInOut" customModule="ChatLib" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmM-Gn-gfA">
+                    <rect key="frame" x="315" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="2Ca-o5-KMk"/>
+                        <constraint firstAttribute="width" constant="40" id="7Em-eK-gjc"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="plus.magnifyingglass" catalog="system"/>
+                    <connections>
+                        <action selector="fontIncrease:" destination="iN0-l3-epB" eventType="touchUpInside" id="o01-ab-kKd"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdr-xI-BA9">
+                    <rect key="frame" x="260" y="9.5" width="35" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRl-uJ-ppO">
+                    <rect key="frame" x="200" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="Ku2-Ni-uY2"/>
+                        <constraint firstAttribute="height" constant="40" id="Yuy-tY-ohy"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="minus.magnifyingglass" catalog="system"/>
+                    <connections>
+                        <action selector="fontDecrease:" destination="iN0-l3-epB" eventType="touchUpInside" id="hEB-lM-H2s"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.080182500180000005" green="0.23159518840000001" blue="0.38040995599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="xmM-Gn-gfA" firstAttribute="leading" secondItem="Mdr-xI-BA9" secondAttribute="trailing" constant="20" id="779-Ln-rWu"/>
+                <constraint firstItem="xmM-Gn-gfA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HTj-Rp-qMd"/>
+                <constraint firstAttribute="trailing" secondItem="xmM-Gn-gfA" secondAttribute="trailing" constant="20" id="HbY-dt-Bwh"/>
+                <constraint firstItem="Mdr-xI-BA9" firstAttribute="leading" secondItem="lRl-uJ-ppO" secondAttribute="trailing" constant="20" id="J8b-z7-BbR"/>
+                <constraint firstItem="lRl-uJ-ppO" firstAttribute="centerY" secondItem="Mdr-xI-BA9" secondAttribute="centerY" id="YOV-Jr-S7d"/>
+                <constraint firstItem="Mdr-xI-BA9" firstAttribute="centerY" secondItem="xmM-Gn-gfA" secondAttribute="centerY" id="z5e-DU-3ax"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="ZoomPer" destination="Mdr-xI-BA9" id="pdo-aM-QpP"/>
+            </connections>
+            <point key="canvasLocation" x="-617" y="-222"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="minus.magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="plus.magnifyingglass" catalog="system" width="128" height="115"/>
+    </resources>
+</document>

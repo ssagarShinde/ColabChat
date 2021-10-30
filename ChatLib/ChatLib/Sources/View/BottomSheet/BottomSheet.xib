@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BottomSheet" customModule="ChatLib" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HPP-DA-Xbk">
+                    <rect key="frame" x="10" y="10" width="242" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJy-iO-Oir">
+                            <rect key="frame" x="0.0" y="0.0" width="70" height="80"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="a3i-cO-JoZ"/>
+                                <constraint firstAttribute="height" constant="80" id="e0e-kU-o2s"/>
+                                <constraint firstAttribute="width" constant="70" id="sZW-pO-TE3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <inset key="titleEdgeInsets" minX="-48" minY="0.0" maxX="0.0" maxY="-60"/>
+                            <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="15"/>
+                            <state key="normal" title="Camera" image="colabPhoto">
+                                <color key="titleColor" red="0.61960784313725492" green="0.63529411764705879" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="cameraBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Nb4-oE-fBF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ct3-yj-r7M">
+                            <rect key="frame" x="86" y="0.0" width="70" height="80"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="FTx-qE-8gG"/>
+                                <constraint firstAttribute="height" constant="80" id="QVx-Ss-KP4"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="-60"/>
+                            <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="15"/>
+                            <state key="normal" title="Image" image="colabGallery">
+                                <color key="titleColor" red="0.61960784313725492" green="0.63529411764705879" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="GalleryBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="iPD-6E-VVl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKV-a7-7qy">
+                            <rect key="frame" x="172" y="0.0" width="70" height="80"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="JQo-Lp-cKC"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="bAq-FO-R5h"/>
+                                <constraint firstAttribute="height" constant="80" id="wi2-nQ-dbJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <inset key="titleEdgeInsets" minX="-50" minY="0.0" maxX="0.0" maxY="-60"/>
+                            <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="15"/>
+                            <state key="normal" title="File" image="colabFile">
+                                <color key="titleColor" red="0.61960784313725492" green="0.63529411764705879" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="fileBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="LEd-vo-jER"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1Q-Es-shp">
+                            <rect key="frame" x="242" y="0.0" width="0.0" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="MQn-gc-12B"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <inset key="titleEdgeInsets" minX="-46" minY="0.0" maxX="0.0" maxY="-60"/>
+                            <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="15"/>
+                            <state key="normal" title="Contact" image="contact">
+                                <color key="titleColor" red="0.61960784313725492" green="0.63529411764705879" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMg-cV-Sqn">
+                            <rect key="frame" x="242" y="0.0" width="0.0" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="Bnw-x4-a1b"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <inset key="titleEdgeInsets" minX="-46" minY="0.0" maxX="0.0" maxY="-60"/>
+                            <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="15"/>
+                            <state key="normal" title="Location" image="location">
+                                <color key="titleColor" red="0.61960784313725492" green="0.63529411764705879" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="HPP-DA-Xbk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="JnZ-wD-IEf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="HPP-DA-Xbk" secondAttribute="bottom" constant="10" id="NOw-97-Drn"/>
+                <constraint firstItem="HPP-DA-Xbk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="laf-ec-Ut4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cameraBtn" destination="RJy-iO-Oir" id="FJC-tZ-1oE"/>
+                <outlet property="filebtn" destination="FKV-a7-7qy" id="Rrv-lc-79Y"/>
+                <outlet property="galeryBtn" destination="Ct3-yj-r7M" id="KoN-b3-LWZ"/>
+            </connections>
+            <point key="canvasLocation" x="12.318840579710146" y="83.035714285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="colabFile" width="50" height="50"/>
+        <image name="colabGallery" width="50" height="50"/>
+        <image name="colabPhoto" width="50" height="50"/>
+        <image name="contact" width="50" height="50"/>
+        <image name="location" width="50" height="50"/>
+    </resources>
+</document>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="213" id="KGk-i7-Jjw" customClass="MessageSend" customModule="ChatLib" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="439" height="202"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="439" height="202"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCs-uI-ig9">
+                        <rect key="frame" x="327" y="8" width="92" height="125"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7g-HU-OHI">
+                                <rect key="frame" x="0.0" y="85" width="92" height="40"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yR0-g4-Kh0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="Open">
+                                    <color key="titleColor" red="0.082352941176470587" green="0.23529411764705882" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colabDocx" translatesAutoresizingMaskIntoConstraints="NO" id="nhV-8o-xpW">
+                                <rect key="frame" x="18.5" y="5" width="55" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="cjY-Se-mFE"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="tpS-ik-OQT">
+                                <rect key="frame" x="27.5" y="44" width="37" height="37"/>
+                                <color key="color" red="0.95344823599999995" green="0.97601324320000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95732682940000002" green="0.97601526979999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="92" id="UkG-kJ-sVa"/>
+                            <constraint firstItem="d7g-HU-OHI" firstAttribute="leading" secondItem="CCs-uI-ig9" secondAttribute="leading" id="bbj-9m-90z"/>
+                            <constraint firstAttribute="bottom" secondItem="d7g-HU-OHI" secondAttribute="bottom" id="cs9-Ac-dZ1"/>
+                            <constraint firstAttribute="height" constant="125" id="eex-1m-fw5"/>
+                            <constraint firstAttribute="trailing" secondItem="d7g-HU-OHI" secondAttribute="trailing" id="hd8-aj-fyM"/>
+                            <constraint firstItem="tpS-ik-OQT" firstAttribute="centerX" secondItem="CCs-uI-ig9" secondAttribute="centerX" id="isw-iN-S3S"/>
+                            <constraint firstItem="nhV-8o-xpW" firstAttribute="centerX" secondItem="CCs-uI-ig9" secondAttribute="centerX" id="oMv-vt-wNa"/>
+                            <constraint firstItem="d7g-HU-OHI" firstAttribute="top" secondItem="nhV-8o-xpW" secondAttribute="bottom" constant="8" symbolic="YES" id="pVB-jK-KD8"/>
+                            <constraint firstItem="nhV-8o-xpW" firstAttribute="top" secondItem="CCs-uI-ig9" secondAttribute="top" constant="5" id="tVP-gg-UL1"/>
+                            <constraint firstItem="tpS-ik-OQT" firstAttribute="centerY" secondItem="CCs-uI-ig9" secondAttribute="centerY" id="zDh-hE-NTc"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 mins ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yn-xs-5xv">
+                        <rect key="frame" x="333" y="143.5" width="62" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="t1e-f9-KCL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colabDoneSingle" translatesAutoresizingMaskIntoConstraints="NO" id="0Tw-UL-wge">
+                        <rect key="frame" x="399" y="141" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Kcx-lJ-iGm"/>
+                            <constraint firstAttribute="width" constant="20" id="LuD-VB-45w"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0Tw-UL-wge" firstAttribute="leading" secondItem="9Yn-xs-5xv" secondAttribute="trailing" constant="4" id="1A3-2i-LyZ"/>
+                    <constraint firstAttribute="trailing" secondItem="CCs-uI-ig9" secondAttribute="trailing" constant="20" id="3hp-Rq-s9x"/>
+                    <constraint firstAttribute="bottom" secondItem="0Tw-UL-wge" secondAttribute="bottom" constant="8" id="ibq-7U-dzB"/>
+                    <constraint firstItem="CCs-uI-ig9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="s68-Oj-ojB"/>
+                    <constraint firstItem="0Tw-UL-wge" firstAttribute="top" secondItem="CCs-uI-ig9" secondAttribute="bottom" constant="8" id="xZi-0u-Jsf"/>
+                    <constraint firstItem="0Tw-UL-wge" firstAttribute="centerY" secondItem="9Yn-xs-5xv" secondAttribute="centerY" id="xhj-bk-ntJ"/>
+                    <constraint firstAttribute="trailing" secondItem="0Tw-UL-wge" secondAttribute="trailing" constant="20" id="zy2-wA-ePn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="attachmentView" destination="CCs-uI-ig9" id="zoV-1m-mjo"/>
+                <outlet property="btnOpen" destination="d7g-HU-OHI" id="1cr-C5-wVS"/>
+                <outlet property="fileTypeImage" destination="nhV-8o-xpW" id="GMJ-E5-jzV"/>
+                <outlet property="ivSeen" destination="0Tw-UL-wge" id="fl8-p2-NBi"/>
+                <outlet property="spinner" destination="tpS-ik-OQT" id="raJ-OV-CZW"/>
+                <outlet property="timeAgoLbl" destination="9Yn-xs-5xv" id="ggE-g3-IYG"/>
+            </connections>
+            <point key="canvasLocation" x="-136.95652173913044" y="53.571428571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="colabDocx" width="102" height="124"/>
+        <image name="colabDoneSingle" width="24" height="24"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
