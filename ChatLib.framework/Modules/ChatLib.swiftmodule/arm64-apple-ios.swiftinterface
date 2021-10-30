@@ -1,0 +1,360 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name ChatLib
+import AVFoundation
+@_exported import ChatLib
+import CommonCrypto
+import Foundation
+import MobileCoreServices
+import Photos
+import SQLite3
+import SocketIO
+import Swift
+import SystemConfiguration
+import UIKit
+import UniformTypeIdentifiers
+import WebKit
+import _Concurrency
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
+}
+@_hasMissingDesignatedInitializers public class InternetCheck {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CobrowseManager {
+  public static let shared: ChatLib.CobrowseManager
+  public var view: UIKit.UIView?
+  public static func joinChat(completion: @escaping (_ status: ChatLib.CobrowseStatus) -> Swift.Void)
+  public static func setupUI(tag: Swift.Int, view: UIKit.UIView?)
+  @objc deinit
+}
+extension ChatLib.CobrowseManager : ChatLib.ShareScreenPr {
+  public func value(tag: Swift.Int)
+}
+public enum HoverPosition {
+  case topLeft
+  case topRight
+  case bottomLeft
+  case bottomRight
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Swift.Set where Element == ChatLib.HoverPosition {
+  public static let all: Swift.Set<ChatLib.HoverPosition>
+}
+extension ChatLib.HoverPosition : Swift.CaseIterable {
+  public typealias AllCases = [ChatLib.HoverPosition]
+  public static var allCases: [ChatLib.HoverPosition] {
+    get
+  }
+}
+extension ChatLib.HoverPosition : Swift.Equatable {
+  public static func == (a: ChatLib.HoverPosition, b: ChatLib.HoverPosition) -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers public class ColorManager {
+  public static let shared: ChatLib.ColorManager
+  public var theme: UIKit.UIColor
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Device {
+  public class var isIpad: Swift.Bool {
+    get
+  }
+  public class var isIphone: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+public enum Result<T> {
+  case success(T)
+  case failure(Swift.Error)
+}
+public enum HoverColor {
+  case color(UIKit.UIColor)
+  case gradient(top: UIKit.UIColor, bottom: UIKit.UIColor)
+}
+@objc @_inheritsConvenienceInitializers public class CobrowseSocketHelper : ObjectiveC.NSObject {
+  public static let shared: ChatLib.CobrowseSocketHelper
+  public var cobrowsemanager: SocketIO.SocketManager?
+  public var cobrowseSocket: SocketIO.SocketIOClient?
+  public static var userName: Swift.String
+  public static var userID: Swift.String
+  public static var mobileNumber: Swift.String
+  public static var emialId: Swift.String
+  @objc override dynamic public init()
+  public func configureSocketClient(receivedURL: Swift.String)
+  public func cobrowseSocketEstablishConnection(type: Swift.String)
+  public func disconnect()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ChatHistoryDetailsView : UIKit.UIView {
+  @objc deinit
+}
+extension ChatLib.ChatHistoryDetailsView : UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, estimatedHeightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+extension ChatLib.ChatHistoryDetailsView : UIKit.UITextViewDelegate {
+}
+public struct HoverConfiguration {
+  public var color: ChatLib.HoverColor
+  public var image: UIKit.UIImage?
+  public var imageExpandAnimation: ChatLib.ImageExpandAnimation
+  public var size: CoreGraphics.CGFloat
+  public var imageSizeRatio: CoreGraphics.CGFloat
+  public var padding: UIKit.UIEdgeInsets
+  public var font: UIKit.UIFont?
+  public var dimColor: UIKit.UIColor
+  public var initialPosition: ChatLib.HoverPosition
+  public var allowedPositions: Swift.Set<ChatLib.HoverPosition>
+  public init(image: UIKit.UIImage? = nil, imageExpandAnimation: ChatLib.ImageExpandAnimation = .none, color: ChatLib.HoverColor = .color(.blue), size: CoreGraphics.CGFloat = 60.0, imageSizeRatio: CoreGraphics.CGFloat = 0.4, padding: UIKit.UIEdgeInsets = .init(top: 12, left: 12, bottom: 12, right: 12), font: UIKit.UIFont? = nil, dimColor: UIKit.UIColor = UIColor.black.withAlphaComponent(0.75), initialPosition: ChatLib.HoverPosition = .bottomRight, allowedPositions: Swift.Set<ChatLib.HoverPosition> = .all)
+}
+public enum ImageExpandAnimation {
+  case none
+  case rotate(_: CoreGraphics.CGFloat)
+}
+@objc @_Concurrency.MainActor(unsafe) public class HoverView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var items: [ChatLib.HoverItem] {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var isEnabled: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var onPositionChange: ((ChatLib.HoverPosition) -> ())?
+  @_Concurrency.MainActor(unsafe) public init(with configuration: ChatLib.HoverConfiguration = HoverConfiguration(), items: [ChatLib.HoverItem] = [])
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+extension ChatLib.HoverView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func hitTest(_ point: CoreGraphics.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+}
+@objc @_inheritsConvenienceInitializers public class SocketHelper : ObjectiveC.NSObject {
+  public static var userName: Swift.String
+  public static var userID: Swift.String
+  public static var mobileNumber: Swift.String
+  public static var emialId: Swift.String
+  @objc override dynamic public init()
+  public func configureSocketClient()
+  public func establishConnection(completion: @escaping (_ status: Swift.Bool?) -> Swift.Void)
+  public func closeConnection()
+  public func emitForSocket(eventName: Swift.String, arg: Any)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ChatManager {
+  public static let shared: ChatLib.ChatManager
+  public var view: UIKit.UIView?
+  public static func joinChat()
+  @objc deinit
+}
+public enum CobrowseStatus {
+  case connected
+  case connecting
+  case notconnected
+  case notAvailable
+  case disconnected
+  case notConnected
+  public static func == (a: ChatLib.CobrowseStatus, b: ChatLib.CobrowseStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class CobrowseHelper {
+  public static var delegate: UIKit.UIViewController?
+  public static func startCobrowse() -> ChatLib.CobrowseStatus
+  public static func showScreen(view: UIKit.UIView)
+  public static func handleCancelBtn()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TicketHistoryVC : ChatLib.BaseController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension ChatLib.TicketHistoryVC : UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+extension UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) public func alignTextBelow(spacing: CoreGraphics.CGFloat = 6.0)
+}
+@_hasMissingDesignatedInitializers public class LinkManager {
+  public static let shared: ChatLib.LinkManager
+  public var view: UIKit.UIView?
+  public static func joinChat()
+  @objc deinit
+}
+extension UIKit.UIToolbar {
+  @_Concurrency.MainActor(unsafe) open func ToolbarPiker(mySelect: ObjectiveC.Selector, title: Swift.String) -> UIKit.UIToolbar
+}
+@objc @_inheritsConvenienceInitializers public class ChatSocketHelper : ObjectiveC.NSObject {
+  public static let shared: ChatLib.ChatSocketHelper
+  public var chatmanager: SocketIO.SocketManager?
+  public var chatSocket: SocketIO.SocketIOClient?
+  @objc override dynamic public init()
+  public func configureSocketClient(receivedURL: Swift.String)
+  public func chatSocketEstablishConnection(type: Swift.String)
+  public func startCOBROWSE(type: Swift.String)
+  public func socketChatCloseConnection()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class CobrowseSocketIndividual : ObjectiveC.NSObject {
+  public static let shareds: ChatLib.CobrowseSocketIndividual
+  public var standalone: Swift.Bool
+  public var cobrowsemanagers: SocketIO.SocketManager?
+  public var cobrowseSockets: SocketIO.SocketIOClient?
+  public static var userName: Swift.String
+  public static var userID: Swift.String
+  public static var mobileNumber: Swift.String
+  public static var emialId: Swift.String
+  @objc override dynamic public init()
+  public func configureSocketClient(receivedURL: Swift.String)
+  public func establishConnections(type: Swift.String)
+  public func disconnect()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class Menu : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @objc deinit
+}
+extension ChatLib.Menu : UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, viewForFooterInSection section: Swift.Int) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CreateTicketVC : ChatLib.BaseController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) override public func handToolBar()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension ChatLib.CreateTicketVC : UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+}
+extension ChatLib.CreateTicketVC : UIKit.UITextViewDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func textViewDidEndEditing(_ textView: UIKit.UITextView)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ChatView : UIKit.UIView, UIKit.UITableViewDataSource, UIKit.UITableViewDelegate, UIKit.UITextViewDelegate {
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var btnVideo: UIKit.UIButton! {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) public func disconnectTimer()
+  @_Concurrency.MainActor(unsafe) @objc public func textViewDidBeginEditing(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc public func textViewDidEndEditing(_ textView: UIKit.UITextView)
+  @available(iOS 10.0, *)
+  @_Concurrency.MainActor(unsafe) @objc public func textView(_ textView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange, interaction: UIKit.UITextItemInteraction) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func textView(_ textView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func textViewDidChange(_ textView: UIKit.UITextView)
+  @_Concurrency.MainActor(unsafe) @objc public func textView(_ textView: UIKit.UITextView, shouldChangeTextIn range: Foundation.NSRange, replacementText text: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, estimatedHeightForRowAt indexPath: Foundation.IndexPath) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, willDisplay cell: UIKit.UITableViewCell, forRowAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public class func fromNib<T>() -> T where T : UIKit.UIView
+}
+extension ChatLib.ChatView : UIKit.UIDocumentInteractionControllerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func documentInteractionControllerViewControllerForPreview(_ controller: UIKit.UIDocumentInteractionController) -> UIKit.UIViewController
+}
+extension ChatLib.ChatView : ChatLib.ShareScreenPr {
+  @_Concurrency.MainActor(unsafe) public func value(tag: Swift.Int)
+}
+@objc @_inheritsConvenienceInitializers public class LinkSocket : ObjectiveC.NSObject {
+  public static let shared: ChatLib.LinkSocket
+  public var linkManagers: SocketIO.SocketManager?
+  public var linkSocket: SocketIO.SocketIOClient?
+  @objc override dynamic public init()
+  public func configureSocketClient(receivedURL: Swift.String)
+  public func establishConnections(replyEmailTo: Swift.String, description: Swift.String, subject: Swift.String, priority: Swift.String, status: Swift.String, requestType: Swift.String, sourceChannel: Swift.String, userType: Swift.String, businessHours: Swift.String, source: Swift.String, sourceId: Swift.String, UploadFileNames: Swift.String, contactNo: Swift.String, emailTo: Swift.String)
+  public func fetchHistory(status: [Swift.String])
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class TempViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension ChatLib.TempViewController : UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+}
+@_hasMissingDesignatedInitializers public class MaskView {
+  public static let shared: ChatLib.MaskView
+  public var view: [UIKit.UIView]
+  @objc deinit
+}
+public protocol ShareScreenPr {
+  func value(tag: Swift.Int)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class ScreenSharePopup : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var delegate: ChatLib.ShareScreenPr?
+  @_Concurrency.MainActor(unsafe) public func createUI(btnTag: Swift.Int)
+  @objc deinit
+}
+public struct HoverItem {
+  public init(title: Swift.String? = nil, image: UIKit.UIImage?, color: ChatLib.HoverColor = .color(.white), onTap: @escaping () -> ())
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class PermissionPopup : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func createUI(title: Swift.String, msg: Swift.String, permissionFor: Swift.String)
+  @objc deinit
+}
+@objc extension UIKit.UIColor {
+  @objc convenience dynamic public init(red: Swift.Int, green: Swift.Int, blue: Swift.Int)
+  @objc convenience dynamic public init(rgb: Swift.Int)
+}
+@objc extension UIKit.UIColor {
+  @objc(msgDeliveredColor) dynamic public class var msgDeliveredColor: UIKit.UIColor {
+    @objc get
+  }
+  @objc(msgUndeliveredColor) dynamic public class var msgUndeliveredColor: UIKit.UIColor {
+    @objc get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class BaseController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) public static var getStatusBarHeight: CoreGraphics.CGFloat {
+    get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open func handToolBar()
+  @_Concurrency.MainActor(unsafe) open func createNavigationBarWithBack(_ navTitle: Swift.String)
+  @_Concurrency.MainActor(unsafe) open func createNavigationBar(_ navTitle: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension ChatLib.HoverPosition : Swift.Hashable {}
+extension ChatLib.CobrowseStatus : Swift.Equatable {}
+extension ChatLib.CobrowseStatus : Swift.Hashable {}

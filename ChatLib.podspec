@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "ChatLib"
-  spec.version = "2.0.0"
+  spec.version = "2.0.1"
   spec.summary = "ChatLib iOS Client"
   spec.description = "This is Chat description"
 
@@ -18,7 +18,6 @@ Pod::Spec.new do |spec|
   #spec.exclude_files = 'Classes/Exclude'
   #spec.resource_bundles = { "ChatLib" => ["ChatLib/ChatLib/Sources/**/*.xcassets"] }
   #spec.resources = ["ChatLib/ChatLib/Sources/**/*.xcassets"]
-
   spec.ios.framework = "UIKit"
 
   spec.dependency 'Socket.IO-Client-Swift', '~> 15.2.0'
