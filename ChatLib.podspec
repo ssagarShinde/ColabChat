@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "ChatLib"
-  spec.version = "2.0.2"
+  spec.version = "2.0.3"
   spec.summary = "ChatLib iOS Client"
   spec.description = "This is Chat description"
 
@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.source           = { :git => 'https://github.com/ssagarShinde/ColabChat.git', :tag => spec.version.to_s }
   spec.requires_arc = true
 
-  spec.source_files  = 'ChatLib/Pods/**/*.{h,m,swift}'
+  spec.source_files  = 'ChatLib/ChatLib/Sources/**/*.{h,m,swift}'
   spec.exclude_files = 'Classes/Exclude'
   spec.resource_bundles = { "ChatLib" => ["ChatLib/ChatLib/Sources/**/*.xcassets"] }
   spec.resources = ["ChatLib/ChatLib/Sources/**/*.xcassets"]
